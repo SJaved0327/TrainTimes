@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
 	    <meta charset="UTF-8">
 	    <title>Train Times</title>
+
 	    <!-- Bootstrap -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
 	    <!-- CSS file -->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+
 	</head>
 	<body>
 	<div class="container">
@@ -82,21 +84,21 @@
 					<form>
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Train Name</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+					    <input type="email" class="form-control" id="TrainName-input" aria-describedby="emailHelp" placeholder="Enter email">
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Destination</label>
-					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					    <input type="password" class="form-control" id="Destination-input" placeholder="Password">
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">First Train Time (HH:mm - military time)</label>
-					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					    <input type="password" class="form-control" id="TrainTime-input" placeholder="Password">
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Frequency (min)</label>
-					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					    <input type="password" class="form-control" id="Frequency-input" placeholder="Password">
 					  </div>
-					  <button type="submit" class="btn btn-primary">Submit</button>
+					  <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
 					</form>
 
 				  </div>
@@ -109,6 +111,7 @@
 		<br>
 
 	</div>
+
 		<!-- JQuery -->
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
 		</script>
@@ -116,18 +119,8 @@
 		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 		<!-- Firebase Reference -->
     	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-    	<script>
-		  // Initialize Firebase
-		  // TODO: Replace with your project's customized code snippet
-		  var config = {
-		    apiKey: "AIzaSyD0ry1pk-Mv3hvehuuy92WQhZZaDCrI7X4",
-		    authDomain: "traintimes-1eb10.firebaseapp.com",
-		    databaseURL: "https://traintimes-1eb10.firebaseio.com/",
-		    storageBucket: "gs://traintimes-1eb10.appspot.com/",
-		    messagingSenderId: "945600403854",
-		  };
-		  firebase.initializeApp(config);
-		</script>
+    	<!-- Javascript -->
+    	<script type="text/javascript" src="assets/javascript/javascript.js"></script> 
 
 	</body>
 </html>
