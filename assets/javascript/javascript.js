@@ -1,13 +1,25 @@
-// ------------- GLOBAL VARIABLES ------------- //
 
-var TrainName = $("#TrainName-input");
-var Destination = $("#Destination-input");
-var TrainTime = $("#TrainTime-input");
-var Frequency = $("#Frequency-input");
 
-// ------------- FUNCTIONS ------------- //
+var config = {
+	apiKey: "AIzaSyD0ry1pk-Mv3hvehuuy92WQhZZaDCrI7X4",
+	authDomain: "traintimes-1eb10.firebaseapp.com",		
+	databaseURL: "https://traintimes-1eb10.firebaseio.com/",
+	projectId: "traintimes-1eb10",
+	storageBucket: "traintimes-1eb10.appspot.com/",
+	messagingSenderId: "945600403854"
+};
 
-function submitClick(){
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+var TrainName = $("#TrainName-input").val().trim();
+var Destination = $("#Destination-input").val().trim();
+var TrainTime = $("#TrainTime-input").val().trim();
+var Frequency = $("#Frequency-input").val().trim();
+
+
+$("#submit-button").on("click", function(event){
 
 	event.preventDefault();
 
@@ -21,44 +33,18 @@ function submitClick(){
 	console.log(TrainTime);
 	console.log(Frequency);
 
-};
+	database.ref().push({
+		TrainName: TrainName,
+		Destination: Destination,
+		TrainTime: TrainTime,
+		Frequency: Frequency
+    });
 
 
+});
 
 
-
-// ------------- FIREBASE ------------- //
-
-	var config = {
-		apiKey: "AIzaSyD0ry1pk-Mv3hvehuuy92WQhZZaDCrI7X4",
-		authDomain: "traintimes-1eb10.firebaseapp.com",
-		databaseURL: "https://traintimes-1eb10.firebaseio.com/",
-		storageBucket: "gs://traintimes-1eb10.appspot.com/",
-		messagingSenderId: "945600403854",
-	};
-	firebase.initializeApp(config);
-
-
-
-
-// ------------- hasdlfalsdjf ------------- //
-
-
-
-
-
-
-
-
-
-
-// ------------- CLICK EVENT ------------- //
-
-//when submit button is clicked:
-//inputs are stored into variables
-$("#submit-button").on("click", submitClick);
-
-
+//---------//
 
 
 
