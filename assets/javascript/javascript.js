@@ -9,10 +9,12 @@ var Frequency = $("#Frequency-input");
 
 function submitClick(){
 
-	var TrainName = $("#TrainName-input");
-	var Destination = $("#Destination-input");
-	var TrainTime = $("#TrainTime-input");
-	var Frequency = $("#Frequency-input");
+	event.preventDefault();
+
+	var TrainName = $("#TrainName-input").val().trim();
+	var Destination = $("#Destination-input").val().trim();
+	var TrainTime = $("#TrainTime-input").val().trim();
+	var Frequency = $("#Frequency-input").val().trim();
 
 	console.log(TrainName);
 	console.log(Destination);
@@ -20,7 +22,6 @@ function submitClick(){
 	console.log(Frequency);
 
 };
-
 
 
 
@@ -55,7 +56,7 @@ function submitClick(){
 
 //when submit button is clicked:
 //inputs are stored into variables
-$("#submit-button")on("click", submitClick);
+$("#submit-button").on("click", submitClick);
 
 
 
