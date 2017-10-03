@@ -10,6 +10,14 @@
 	    <!-- CSS file -->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
 
+		<!-- JQuery -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+		</script>
+		<!-- Moment JS -->
+		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+		<!-- Firebase Reference -->
+    	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
 	</head>
 	<body>
 	<div class="container">
@@ -54,10 +62,11 @@
 					    <tr>
 					      <td>Trenton Express</td>
 					      <td>Trenton</td>
-					      <td>25</td>
-					      <td>05:35 PM</td>
-					      <td>10</td>
+					      <td>20</td>
+					      <td>05:55 PM</td>
+					      <td>12</td>
 					    </tr>
+					    <span id="display"></span>
 					  </tbody>
 					</table>
 
@@ -111,14 +120,7 @@
 		<br>
 
 	</div>
-
-		<!-- JQuery -->
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
-		</script>
-		<!-- Moment JS -->
-		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-		<!-- Firebase Reference -->
-    	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+		
     	<!-- Javascript -->
     	<script type="text/javascript" src="assets/javascript/javascript.js"></script> 
 
