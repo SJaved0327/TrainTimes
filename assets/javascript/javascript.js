@@ -29,7 +29,7 @@ $("#submit-button").on("click", function(event){
 	var TrainName = $("#TrainName-input").val().trim();
 	var Destination = $("#Destination-input").val().trim();
 	var TrainTime = moment($("#TrainTime-input").val().trim(), "HH:mm a").format("X");
-	var Frequency = $("#Frequency-input").val().trim();
+	var Frequency = moment($("#Frequency-input").val().trim(), "m").format("X");
 
 	//pushes input from user to the database
 	database.ref().push({
@@ -48,7 +48,8 @@ $("#submit-button").on("click", function(event){
 });
 
 
-//when new values added to database, enters data into fields
+//ADD NEW VALUES TO FIREBASE AND PRINT TO DOM//
+
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   console.log(childSnapshot.val());
@@ -59,16 +60,55 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var TrainTime = childSnapshot.val().TrainTime;
   var Frequency = childSnapshot.val().Frequency;
 
-  // Prettify the employee start
-  var TrainTimeMilitary = moment.unix(TrainTime).format("HH:mm");
+  // convert unix to military time display
+  var TrainTimeMilitary = moment.unix(TrainTime).format("HH:mm a");
+  // convert unix to minutes display
+  var FrequencyMin = moment.unix(Frequency).format("m");
 
-  var Next = TrainTimeMilitary ;
+  //would need to create a variable called NextTrain
+  //determine the time the next train will arrive at
 
-  var Away = ;
+  //would need to create a variable called AwayMin
+  //determine how many minutes away the next train is
+
+  //take the train time input by the user
+  // // var TrainTime is unix
+  // // unix number of seconds since January 1, 1970
+
+  //current date and time
+  // var CurrentTime = moment().format("X");
+
+  //add frequency amount in minutes to the train time X number of times until greater than CurrentTime
+  // // var Frequency is unix
+  // // unix number of seconds since January 1, 1970
+  	/*
+  var NextTrain; 
+
+  for (NextTrain < CurrentTime){
+
+  	NextTrain = TrainTime + Frequency;
+  	NextTrain = NextTrain;
+
+  }
+
+  //Take the value of NextTrain and convert it to military time
+  // // print this to DOM
+
+  //Take the time difference of NextTrain and CurrentTime
+  // // convert unix to minutes
+  // // store as AwayMin
+  // // print this to DOM
+
+	*/
+
+
+  // var NextTrain = TrainTimeMilitary ;
+
+  // var AwayMin = ;
 
   // Add each train's data into the table
   $(".table > tbody").append("<tr><td>" + TrainName + "</td><td>" + Destination + "</td><td>" +
-  Frequency + "</td><td>" + Next + "</td><td>" + Away + "</td></tr>");
+  Frequency + "</td><td>" + TrainTimeMilitary + "</td><td>" + "Away" + "</td></tr>");
 
 });
 
